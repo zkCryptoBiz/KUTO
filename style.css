@@ -1,0 +1,359 @@
+body {
+   margin: 0;
+   padding: 0;
+   background-color: #1dff00;
+   font-family: 'Marvin', sans-serif;
+   cursor: url('./assets/cursor.png'), auto;
+}
+
+header {
+   background-color: #34a734;
+   padding: 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 20px 40px;
+}
+
+.logo img {
+   height: 50px;
+}
+
+.social-buttons {
+   display: flex;
+   gap: 20px;
+}
+
+.social-buttons img {
+   height: 40px;
+   transition: transform 0.2s;
+}
+
+.social-buttons img:hover {
+   transform: scale(1.1);
+}
+
+.first-block {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 50px 20px;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.first-block img {
+   height: 200px;
+}
+
+.food-block {
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+   padding: 50px 20px;
+}
+
+.food-block img {
+   height: 150px;
+   animation-timing-function: ease-in-out;
+}
+
+/* Чередуем анимации для соседних картинок */
+.food-block img:nth-child(odd) {
+   animation: bounce1 1.2s infinite;
+}
+
+.food-block img:nth-child(even) {
+   animation: bounce2 1.2s infinite;
+}
+
+/* Разные задержки для каждой картинки */
+.food-block img:nth-child(1) {
+   animation-delay: -0.3s;
+}
+
+.food-block img:nth-child(2) {
+   animation-delay: -0.1s;
+}
+
+.food-block img:nth-child(3) {
+   animation-delay: -0.6s;
+}
+
+.food-block img:nth-child(4) {
+   animation-delay: -0.4s;
+}
+
+.contract-block {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 50px 20px 100px;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.contract-block img {
+   height: 150px;
+}
+
+.contract {
+   background-color: #ffd593;
+   padding: 20px;
+   border-radius: 10px;
+   color: #34a734;
+   font-size: 18px;
+   text-align: center;
+}
+
+.contract:hover {
+   background-color: #ffc570;
+}
+
+.header-container {
+   width: 100%;
+   background-color: #34a734;
+}
+
+@keyframes bounce1 {
+   0% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(-65px);
+   }
+   100% {
+      transform: translateY(0);
+   }
+}
+
+@keyframes bounce2 {
+   0% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(65px);
+   }
+   100% {
+      transform: translateY(0);
+   }
+}
+
+/* Добавим курсор для всех кликабельных элементов */
+a,
+button,
+.contract {
+   cursor: url('../assets/food_3.png'), auto;
+}
+
+.popup-image-left {
+   position: fixed;
+   left: 0;
+   bottom: -100%;
+   animation: popupAnimationLeft 8s infinite;
+   z-index: 1000;
+}
+
+.popup-image-right {
+   position: fixed;
+   right: 0;
+   bottom: -100%;
+   animation: popupAnimationRight 8s infinite;
+   z-index: 1000;
+   transform: scaleX(-1);
+}
+
+.popup-image-left img,
+.popup-image-right img {
+   height: 300px;
+}
+
+@keyframes popupAnimationLeft {
+   0%,
+   100% {
+      bottom: -100%;
+   }
+   5%,
+   45% {
+      bottom: -5px;
+   }
+   50% {
+      bottom: -100%;
+   }
+}
+
+@keyframes popupAnimationRight {
+   0%,
+   50% {
+      bottom: -100%;
+   }
+   55%,
+   95% {
+      bottom: -5px;
+   }
+   100% {
+      bottom: -100%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .first-block {
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 20px;
+   }
+
+   .food-block {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+   }
+
+   .food-block img {
+      height: 100px;
+      width: auto;
+   }
+
+   .contract-block {
+      flex-direction: column;
+      gap: 30px;
+      padding: 20px;
+   }
+
+   .contract {
+      width: 90%;
+      font-size: 14px;
+      word-break: break-all;
+   }
+
+   .header-container header {
+      padding: 10px 20px;
+   }
+
+   .social-buttons {
+      gap: 10px;
+   }
+
+   .social-buttons img {
+      height: 30px;
+   }
+
+   .logo img {
+      height: 35px;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .first-block img {
+      height: 100px;
+   }
+
+   .food-block {
+      gap: 15px;
+      padding: 15px;
+   }
+
+   .food-block img {
+      height: 80px;
+      width: auto;
+   }
+
+   .contract-block img {
+      height: 80px;
+   }
+
+   .contract {
+      font-size: 12px;
+      padding: 10px;
+   }
+
+   .popup-image-left img,
+   .popup-image-right img {
+      height: 120px;
+   }
+}
+
+/* Добавим цвет для заголовка KUTTO */
+.first-block img:nth-child(2) {
+   filter: drop-shadow(2px 2px 0 #ff8cfe);
+}
+
+/* Анимация для боковых картинок (верхних и нижних) */
+.first-block img:first-child,
+.contract-block img:first-child {
+   animation: sideRotateRight 0.5s infinite ease-in;
+   transform-origin: bottom center;
+}
+
+.first-block img:last-child,
+.contract-block img:last-child {
+   animation: sideRotateLeft 0.5s infinite ease-in;
+   transform-origin: bottom center;
+}
+
+@keyframes sideRotateRight {
+   0% {
+      transform: rotate(0deg);
+   }
+   30% {
+      transform: rotate(25deg);
+   }
+   60% {
+      transform: rotate(25deg);
+   }
+   100% {
+      transform: rotate(0deg);
+   }
+}
+
+@keyframes sideRotateLeft {
+   0% {
+      transform: rotate(0deg);
+   }
+   30% {
+      transform: rotate(-25deg);
+   }
+   60% {
+      transform: rotate(-25deg);
+   }
+   100% {
+      transform: rotate(0deg);
+   }
+}
+
+/* Оставляем тень для центрального логотипа */
+.first-block img:nth-child(2) {
+   filter: drop-shadow(2px 2px 0 #ff8cfe);
+}
+
+.copy-alert {
+   position: fixed;
+   top: 20px;
+   left: 50%;
+   transform: translateX(-50%) translateY(-100px);
+   background-color: #34a734;
+   color: #fff;
+   padding: 15px 25px;
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   z-index: 2000;
+   transition: transform 0.3s ease-in-out;
+}
+
+.copy-alert.show {
+   transform: translateX(-50%) translateY(0);
+}
+
+.copy-alert img {
+   height: 30px;
+}
+
+.copy-alert span {
+   font-size: 18px;
+}

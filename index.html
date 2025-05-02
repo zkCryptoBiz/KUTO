@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>KUTTO</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Marvin&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <div class="header-container">
+         <header>
+            <div class="logo">
+               <img src="assets/ico_1.png" alt="KUTTO" />
+            </div>
+            <div class="social-buttons">
+               <a href="https://t.me/KuttoFun" target="_blank">
+                  <img src="assets/button_1.png" alt="Telegram" />
+               </a>
+               <a
+                  href="https://dexscreener.com/solana/GQBvdSA7ez7DazF7adUW2hzZCo6aWr6Qu2zzkQPpmkk"
+                  target="_blank"
+               >
+                  <img src="assets/button_2.png" alt="DexScreener" />
+               </a>
+               <a
+                  href="https://www.dextools.io/app/en/solana/pair-explorer/5up5YJpETTKfhFLezujy4KrKDzUNf2yypmw54FHgSqBJ"
+                  target="_blank"
+               >
+                  <img src="assets/button_3.png" alt="DexTools" />
+               </a>
+               <a href="https://x.com/KuttoFun" target="_blank">
+                  <img src="assets/button_4.png" alt="Twitter" />
+               </a>
+            </div>
+         </header>
+      </div>
+
+      <section class="first-block">
+         <img src="assets/rat_4.png" alt="KUTTO" />
+         <img src="assets/title.png" alt="KUTTO" />
+         <img src="assets/rat_3.png" alt="KUTTO" />
+      </section>
+
+      <section class="food-block">
+         <img src="assets/food_4.png" alt="Food" />
+         <img src="assets/food_2.png" alt="Food" />
+         <img src="assets/food_3.png" alt="Food" />
+         <img src="assets/food_1.png" alt="Food" />
+      </section>
+
+      <section class="contract-block">
+         <img src="assets/rat_1.png" alt="KUTTO" />
+         <div class="contract" id="contract">
+            GQBvdSA7ez7DazF7adUW2hzZCo6aWr6Qu2zzkQPpmkk
+         </div>
+         <img src="assets/rat_2.png" alt="KUTTO" />
+      </section>
+
+      <div class="popup-image-left">
+         <img src="assets/web_4.gif" alt="Animation" />
+      </div>
+      <div class="popup-image-right">
+         <img src="assets/web_4.gif" alt="Animation" />
+      </div>
+
+      <div class="copy-alert" id="copyAlert">
+         <img src="assets/food_3.png" alt="Success" />
+         <span>Contract copied!</span>
+      </div>
+
+      <script>
+         document
+            .getElementById('contract')
+            .addEventListener('click', function () {
+               navigator.clipboard.writeText(this.textContent.trim());
+               const alert = document.getElementById('copyAlert');
+               alert.classList.add('show');
+               setTimeout(() => {
+                  alert.classList.remove('show');
+               }, 2000);
+            });
+      </script>
+   </body>
+</html>
