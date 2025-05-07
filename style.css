@@ -7,7 +7,7 @@ body {
 }
 
 header {
-   background-color: #34a734;
+   background-color: #7490dd;
    padding: 20px;
    display: flex;
    justify-content: space-between;
@@ -103,7 +103,7 @@ header {
    background-color: #ffd593;
    padding: 20px;
    border-radius: 10px;
-   color: #34a734;
+   color: #7490dd;
    font-size: 18px;
    text-align: center;
 }
@@ -114,7 +114,7 @@ header {
 
 .header-container {
    width: 100%;
-   background-color: #34a734;
+   background-color: #7490dd;
 }
 
 @keyframes bounce1 {
@@ -335,7 +335,7 @@ button,
    top: 20px;
    left: 50%;
    transform: translateX(-50%) translateY(-100px);
-   background-color: #34a734;
+   background-color: #7490dd;
    color: #fff;
    padding: 15px 25px;
    border-radius: 10px;
